@@ -1,3 +1,4 @@
 <?php
-    include_once('includes/dbConnection.php');
+    include_once('includes/topNav.php');
+    include_once('includes/footer.php');
 ?>
