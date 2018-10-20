@@ -1,0 +1,7 @@
+.navColor {
+    background-color: #2980b9 !important;
+}
+
+.navColor ul>li>a {
+    color: white !important;
+}
