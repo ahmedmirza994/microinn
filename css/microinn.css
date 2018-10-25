@@ -5,3 +5,7 @@
 .navColor ul>li>a {
     color: white !important;
 }
+
+.navColor ul>li>button {
+    color: white !important;
+}

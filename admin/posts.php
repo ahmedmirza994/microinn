@@ -14,8 +14,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Welcome to Admin
-                            <small >Ahmed Mirza</small>
+                            Welcome to Microinn Portal
                         </h1>
                         <?php
                             //include "include/view_all_posts.php";
