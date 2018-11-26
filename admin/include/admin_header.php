@@ -12,9 +12,10 @@
     <title>MicroInn Technologies</title>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/input_effects.js"></script>
+    
     <script src="js/dropzone.js"></script>
+    <script src="js/custom.js"></script>
+    
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/sb-admin.css" rel="stylesheet">
     <link href="css/set1.css" rel="stylesheet">

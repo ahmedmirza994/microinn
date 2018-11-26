@@ -5,7 +5,7 @@ class Database{
     public function connect()   {
         $myHost = 'localhost';
         $myLogin = 'root';
-        $myPassword = 'root';
+        $myPassword = '';
         $myDatabase = 'microinn';
 
         $this->link = mysqli_connect($myHost, $myLogin, $myPassword, $myDatabase) or die ('I cannot connect to the database because');
@@ -34,7 +34,7 @@ class Database{
         $sqlQuery = 'INSERT INTO '.$tableName.' ('.$cols.') VALUES ('.$values.')';
         $check = $this->link->query($sqlQuery);
         if($check){
-            return true;
+            return mysqli_insert_id($this->link);
         }else{
             return false;
         }

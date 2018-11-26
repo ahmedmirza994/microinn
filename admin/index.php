@@ -14,7 +14,6 @@
                         <h1 class="page-header">
                             Welcome to Microinn Portal
                         </h1>
-                     
                     </div>
                 </div>
             </div>

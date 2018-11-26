@@ -2,7 +2,7 @@
     
     function getDbConnection() {
         $userName = 'root';
-        $password = 'root';
+        $password = '';
         $serverName = 'localhost';
         $dbName = 'microinn';
 
