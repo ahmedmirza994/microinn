@@ -1,9 +1,10 @@
 <?php
     include_once('includes/topNav.php');
 ?>  
+
     <div style = "margin-top : 59px;" >
     <?php
-        $query = "select * from posts limit 5;";
+        $query = "select * from post_images order by rand() limit 5";
         $conn = getDbConnection();
         $posts = mysqli_query($conn,$query);
         $num_rows = mysqli_num_rows($posts);
@@ -12,8 +13,9 @@
         <?php
             $slides = array();
             while($row = mysqli_fetch_assoc($posts) ){
-                $slides[] = $row['post_image1'];
+                $slides[] = $row['path'];
             }
+            
         ?>
             
             <div id="demo" class="carousel slide" data-ride="carousel">
@@ -32,8 +34,8 @@
                     <?php    
                         foreach($slides as $key => $slide){
                             echo('
-                                <div class="carousel-item'.($key==0?' active':'').'">
-                                    <img src="./images/'.$slide.'" alt="" width="100%" height="300px">
+                                <div class="text-center carousel-item'.($key==0?' active':'').'">
+                                    <img src="./images/'.$slide.'" alt="" width="auto" height="500px">
                                 </div>
                             ');
                         }

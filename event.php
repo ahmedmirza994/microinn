@@ -3,7 +3,7 @@
 ?>  
     <div style = "margin-top : 59px;" >
     <?php
-        $query = "select * from posts limit 5;";
+                $query = "select * from post_images order by rand() limit 5";
         $conn = getDbConnection();
         $posts = mysqli_query($conn,$query);
         $num_rows = mysqli_num_rows($posts);
@@ -12,7 +12,7 @@
         <?php
             $slides = array();
             while($row = mysqli_fetch_assoc($posts) ){
-                $slides[] = $row['post_image1'];
+                $slides[] = $row['path'];
             }
         ?>
             
@@ -32,8 +32,8 @@
                     <?php    
                         foreach($slides as $key => $slide){
                             echo('
-                                <div class="carousel-item'.($key==0?' active':'').'">
-                                    <img src="./images/'.$slide.'" alt="" width="100%" height="300px">
+                                <div class="text-center carousel-item'.($key==0?' active':'').'">
+                                    <img src="./images/'.$slide.'" alt="" width="auto" height="500px">
                                 </div>
                             ');
                         }
@@ -49,33 +49,34 @@
     <?php
         if(isset($_GET['event'])) {
             $eventId = $_GET['event'];
-            $query = "select * from posts where post_cat_id = {$eventId}";
+            $query = "select a.post_id, b.* from posts a, post_images b where a.post_cat_id = {$eventId} and a.post_id=b.post_id";
             $conn = getDbConnection();
             $posts = mysqli_query($conn,$query);
             $num_rows = mysqli_num_rows($posts);
             if($num_rows > 0) {
                 $images = array();
                 while($row = mysqli_fetch_assoc($posts) ){
-                    $images[] = $row['post_image1'];
-                    $images[] = $row['post_image2'];
-                    $images[] = $row['post_image3'];
-                    $images[] = $row['post_image4'];
-                    $images[] = $row['post_image5'];
-                } ?>
-
-                <div class="row">
-                    <div class="column">
+                    $images[] = $row['path'];
+                } 
+    ?>
+            <div class="container">
+                <div class="column">
+                    <h2>Gallery</h2>
+                    <ul class="row flex-sm-fill align-items-center d-flex bd-highlight list-inline">
                         <?php
                             foreach($images as $key => $image) {
                                 if($image != null) {
                                     echo ('
-                                        <img src="./images/'.$image.'" style="width:100%;">
+                                        <li class="p-4 w-25 flex-fill bd-highlight">
+                                            <img class="img-thumbnail" src="./images/'.$image.'" style="width:100%;">
+                                        </li>
                                     ');
                                 }
                             } 
                         ?>
-                    </div>
-                </div>                
+                    </ul>
+                </div>
+            </div>                
     <?php   }
         }
     ?>
