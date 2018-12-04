@@ -1,7 +1,7 @@
 <?php include_once('header.php'); ?>
 <nav class="navbar navbar-expand-lg fixed-top navColor">
     <a class="navbar-brand" href="#">
-        <img src="./images/logo.jpeg" alt="MicroInn" style="width:72px; height:40px;">
+        <img src="./images/logo.jpeg" alt="MicroInn" style="width:60px;">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style = "background-color: white">
         <span class="navbar-toggler-icon" style = "background:white;" > <hr> </span>
@@ -52,7 +52,7 @@
             </li>
             <li class="nav-item">
                 <!-- <a class="nav-link" href="./contactUs.php">Contact Us</a> -->
-                <button type="button" class="btn" data-toggle="modal" data-target="#myModal" style="background-color: #2980b9;" >
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" style="background-color: #2980b9;" >
                     Contact Us
                 </button>
             </li>
